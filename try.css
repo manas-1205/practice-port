@@ -1,0 +1,149 @@
+.team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.con {
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.con .cd {
+    position: relative;
+    max-width: 300px;
+    height: 215px;
+    margin: 30px 10px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+    transition: .5s ease-in-out;
+    background-color: darkblue;
+}
+
+.con .cd:hover {
+    height: 420px;
+}
+
+.con .cd .imgbox {
+    position: realtive;
+    width: 260px;
+    height: 250px;
+    top: -60%;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.3);
+    ;
+}
+
+.con .cd .imgbox img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.con .cd .acontent {
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease-in-out;
+}
+
+.con .cd:hover .acontent {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+
+.foot {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    background: #ede7f6;
+}
+
+footer {
+    position: relative;
+    width: 120%;
+    height: auto;
+    padding: 50px 100px;
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .fcontainer {
+    display: flex;
+    flex-direction: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+footer .fcontainer .fsec {
+    margin-right: 30px;
+}
+
+footer .fcontainer .fsec .aboutus {
+    width: 40%;
+}
+
+footer .fcontainer .fsec .faboutus h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .fcontainer h2:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+
+footer p {
+    color: #999;
+}
+
+.fsci {
+    margin-top: 20px;
+    display: flex;
+}
+
+.fsci li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.fsci li a:hover {
+    background: #ff0;
+}
+
+.fsci li a .fa {
+    color: white;
+    font-size: 20px;
+}

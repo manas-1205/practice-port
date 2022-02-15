@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: floralwhite;
+    font-family: 'Oswald', sans-serif;
+}
+
+ul {
+    padding: 0 5px 0 0;
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 6px;
+    font-size: 1.2em;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+li:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.logo {
+    float: left;
+}
+
+.menu {
+    float: right;
+    padding-left: 10px;
+}
+
+.contain {
+    background-color: black;
+    height: 50px;
+    width: 100%;
+    z-index: 2;
+}
+
+.cont {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 95vh;
+    animation: animate 16s ease-in-out infinite;
+    background-size: cover;
+    z-index: 1;
+}
+
+.cont::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    top: 630px;
+    border: 0;
+    width: 100%;
+    height: 4.7rem;
+    background: url(images/wave-large.png) center no-repeat;
+    background-size: cover;
+}
+
+.outer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 95vh;
+    background: rgba(0, 0, 0, 0.5);
+    /* font-size: 2rem; */
+}
+
+.details {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@keyframes animate {
+    0%,
+    100% {
+        background-image: url(images/camping.jpg);
+    }
+    25% {
+        background-image: url(images/hiking.jpg);
+    }
+    50% {
+        background-image: url(images/header-bg.jpg);
+    }
+    75% {
+        background-image: url(images/stars.jpg);
+    }
+}
+
+@media screen and (min-width:470px) {
+    .cont::before {
+        height: 9.4rem;
+        background-size: cover;
+    }
+}
+
+.gets {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 40px;
+    text-align: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transform-origin: center center;
+}
+
+.sp {
+    position: absolute;
+    top: 92px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    color: #fff;
+    transition: .4s;
+}
+
+.sp.front {
+    transform: rotateX(0deg) translateZ(20px);
+}
+
+.gets:hover .front {
+    transform: rotateX(-180deg) translateZ(20px);
+}
+
+.sp.back {
+    transform: rotateX(180deg) translateZ(20px);
+}
+
+.gets:hover .back {
+    transform: rotateX(0deg) translateZ(20px);
+}
+
+.sp.center {
+    background: linear-gradient(to left, #c31a5b, #7129bd);
+}
+
+.sp.center:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #ffdd1f, #c31a5b);
+    border-radius: 20px;
+    transform: translateZ(-1px);
+}
+
+.gets:hover .sp.center {
+    transform: rotateX(-180deg);
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: white; */
+    width: 97%;
+    /* padding: 20px; */
+    margin: 15px;
+    /* border-radius: 30px; */
+}
+
+.card {
+    width: 30%;
+    height: 200px;
+    margin: 10px;
+    padding: 30px 20px;
+    /* background: #fff; */
+    position: relative;
+    top: 780px;
+    display: flex;
+    align-items: center;
+    align-items: flex-end;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease-in-out;
+    /* margin-bottom: 15px; */
+    border-radius: 30px;
+}
+
+.card:hover {
+    transform: translateY(20px);
+    transform: scale(1.06);
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    widtH: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 176, 155, 0.5), rgba(10, 201, 61, 1));
+    z-index: 7;
+    transition: 0.5s all;
+    opacity: 0;
+    border-radius: 20px;
+}
+
+.card:hover:before {
+    opacity: 1;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+}
+
+.card .info {
+    position: relative;
+    z-index: 9;
+    /* color: #fff; */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s all;
+}
+
+.card:hover .info {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.card .info h1 {
+    margin: 0px;
+}
+
+.card .info p {
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+}
+
+.article {
+    width: 100%;
+    position: relative;
+    height: 500px;
+    top: 850px;
+    z-index: 9;
+    padding: 30px;
+    color: rgb(0, 255, 149);
+    background-color: darkorange;
+}
+
+.article::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -50px;
+    border: 0;
+    width: 100%;
+    height: 4.7rem;
+    background: url(images/wave-large-reversed.png) center no-repeat;
+    background-size: cover;
+}
+
+@media screen and (min-width:470px) {
+    .article::before {
+        height: 9.4rem;
+        background-size: cover;
+    }
+}
+
+.container2 {
+    margin-top: 70px;
+    color: #ffdd1f;
+}
+
+.blank {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    top: 900px;
+}
+
+.foot {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    /* background: #ede7f6; */
+    top: 900px;
+}
+
+footer {
+    z-index: 13;
+    position: relative;
+    top: 700px;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .fcontainer {
+    display: flex;
+    flex-direction: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+footer .fcontainer .fsec {
+    margin-right: 10px;
+}
+
+footer .fcontainer .fsec .faboutus {
+    width: 40%;
+}
+
+footer .fcontainer .fsec .faboutus h2 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+footer .fcontainer h2:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+
+footer p {
+    color: #999;
+}
+
+.fsci {
+    margin-top: 20px;
+    display: flex;
+}
+
+.fsci li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.fsci li a:hover {
+    background: #ff0;
+    text-decoration: none;
+}
+
+.fsci li a .fa {
+    color: white;
+    font-size: 20px;
+}
+
+.fquick-links {
+    position: relative;
+    width: 25%;
+}
+
+.fquick-links ul li a {
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.fquick-links ul li {
+    list-style: none;
+}
+
+.fquick-links ul li a:hover {
+    color: whitesmoke;
+}
